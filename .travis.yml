@@ -12,14 +12,12 @@ python:
 matrix:
   include:
     - python: 2.7_with_system_site_packages
-
-#      addons:
-#        apt:
-#          packages:
-#            - python-coverage
-#            - python-requests
-#            - python-mock
-#            - python-six
+      addons:
+        apt:
+          packages:
+            - python-requests
+            - python-mock
+            - python-six
 
 install:
   - pip install -r tests/requirements.txt
