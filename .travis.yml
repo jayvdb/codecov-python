@@ -9,10 +9,23 @@ python:
   - 3.3
   - 3.4
   - pypy3
+matrix:
+  include:
+    - python: 2.7_with_system_site_packages
+      addons:
+        apt:
+          packages:
+            - python-coverage
+            - python-requests
+            - python-mock
+            - python-six
+
 install:
   - pip install -r tests/requirements.txt
   - python setup.py install
 script:
-  - py.test tests/test.py --cov=codecov
+  - py.test --version
+  - py.test --help
+  - py.test --cov=codecov tests/test.py
 after_success:
   - codecov

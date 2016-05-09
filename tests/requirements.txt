@@ -1,7 +1,7 @@
 coverage
 ddt
 mock
-pytest
+pytest>2.9  # 2.6.4 is incompatible with pytest-cov 2.2.1
 pytest-cov
 funcsigs
 requests
