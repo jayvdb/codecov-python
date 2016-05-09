@@ -14,17 +14,18 @@ matrix:
     - python: 2.7_with_system_site_packages
       addons:
         apt:
+          sources:
+            - debian-sid
           packages:
             - python-requests
             - python-mock
             - python-six
+            - python-ddt
 
 install:
   - pip install -r tests/requirements.txt
   - python setup.py install
 script:
-  - py.test --version
-  - py.test --help
   - py.test --cov=codecov tests/test.py
 after_success:
   - codecov
